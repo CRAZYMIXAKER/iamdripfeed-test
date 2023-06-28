@@ -1,0 +1,17 @@
+{
+    "name": "root/html",
+    "autoload": {
+        "psr-4": {
+            "Root\\Html\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mikhail Makavetski"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-xdebug": "*"
+    }
+}
