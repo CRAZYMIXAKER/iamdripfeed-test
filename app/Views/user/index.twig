@@ -2,7 +2,7 @@
 {% block content %}
     <h1>Users</h1>
     {% if users %}
-        {% include "components/table.twig" with { collection: users } %}
+        {% include "user/_table.twig" with { collection: users } %}
     {% else %}
         <p>Sorry, no users found</p>
     {% endif %}

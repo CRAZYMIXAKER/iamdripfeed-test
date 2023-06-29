@@ -4,14 +4,24 @@ namespace App\Services;
 
 class ModelService
 {
-    public static function getFieldValues($data, $fields): array
+    /**
+     * @param array $data
+     * @param array $fields
+     * @return array
+     */
+    public static function getFieldValues(array $data, array $fields): array
     {
         return array_map(static function($obj) use ($fields) {
             return self::processFields($obj, $fields);
         }, $data);
     }
 
-    public static function processFields($obj, $fields): array
+    /**
+     * @param array $obj
+     * @param array $fields
+     * @return array
+     */
+    public static function processFields(array $obj, array $fields): array
     {
         $result = [];
         foreach ($fields as $field => $subfields) {

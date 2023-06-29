@@ -40,21 +40,15 @@ class Model
     }
 
     /**
-     * @param int $currencyId
-     * @param array $fields
-     * @return array|null
+     * @param int $id
+     * @return int|false
      */
-    public static function find(int $currencyId, array $fields = ['*']): ?array
+    public static function delete(int $id): int|false
     {
-        return null;
-    }
+        $data = array_values(array_filter(self::get(), static function ($item) use ($id) {
+            return $item['id'] !== $id;
+        }));
 
-    /**
-     * @param array $params
-     * @return mixed
-     */
-    public static function create(array $params): mixed
-    {
-        return null;
+        return static::$db->update($data, static::$table);
     }
 }

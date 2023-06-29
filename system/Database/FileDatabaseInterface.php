@@ -12,14 +12,23 @@ interface FileDatabaseInterface
     /**
      * Read database file
      *
-     * @param $fileName
+     * @param string $fileName
      * @return array|false
      */
-    public function read($fileName): array|false;
+    public function read(string $fileName): array|false;
 
     /**
-     * @param $file
+     * Update(rewrite) database file
+     *
+     * @param array $data
+     * @param string $fileName
+     * @return int|false
+     */
+    public function update(array $data, string $fileName): int|false;
+
+    /**
+     * @param string $file
      * @return bool
      */
-    public function checkError($file): bool;
+    public function checkError(string $file): bool;
 }

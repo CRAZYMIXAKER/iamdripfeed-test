@@ -1,6 +1,6 @@
 <table>
     <tr>
-        {% for key in collection[0]|keys %}
+        {% for key in collection|first|keys %}
             <th style="padding: 6px">{{ key }}</th>
         {% endfor %}
     </tr>

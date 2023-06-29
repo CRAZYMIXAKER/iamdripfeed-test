@@ -13,7 +13,7 @@ class Request
     /**
      * @throws JsonException
      */
-    public function __construct($uri)
+    public function __construct(string $uri)
     {
         $this->uri = $uri;
         $this->method = $_SERVER['REQUEST_METHOD'];
@@ -24,9 +24,9 @@ class Request
      * Get a value of request by name
      *
      * @param string $name Name of requests value.
-     * @return string|array Requests value.
+     * @return mixed Requests value.
      */
-    public function get(string $name = ''): string|array
+    public function get(string $name = ''): mixed
     {
         return $name === '' ? $this->data : $this->data[$name];
     }
@@ -36,7 +36,7 @@ class Request
      *
      * @return array
      */
-    public function getAll(): array
+    public function all(): array
     {
         return [
             "data" => $this->data,
