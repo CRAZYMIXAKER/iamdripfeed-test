@@ -2,8 +2,6 @@
 
 namespace Helpers;
 
-use JsonException;
-
 class Response
 {
     /**

@@ -1,0 +1,9 @@
+<nav>
+    <ul class="pagination">
+        {% for i in 1..pageArray['count_page'] %}
+        <li class="page-item{{ i == pageArray['page'] ? ' active' : '' }}">
+            <a class="page-link" href="?page={{ i }}"> {{ i }} </a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>

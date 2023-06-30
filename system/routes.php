@@ -7,7 +7,7 @@ return [
         'request_method' => 'GET'
     ],
     [
-        'route' => '/^\/users?$/',
+        'route' => '/^\/users(\?.*)?$/',
         'method' => 'index',
         'controller' => 'User',
         'request_method' => 'GET'
