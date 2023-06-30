@@ -15,3 +15,31 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.users__form {
+    display: flex;
+    justify-content: center;
+}
+
+.users__form-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    row-gap: 12px;
+}
+
+.users__form-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.users__form-input {
+    width: 100%;
+}
+
+.users__form-error {
+    color: red;
+    margin: unset;
+    word-break: break-all;
+}

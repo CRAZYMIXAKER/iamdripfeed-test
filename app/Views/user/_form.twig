@@ -1,0 +1,103 @@
+<form
+        class="users__form"
+        id="{{ links.uri == '/users/create' ? "add-user-form" : "update-user-form" }}"
+        action="{{ links.uri == '/users/create' ? '/users' : '/users/update' }}"
+        method="POST">
+    <div class="users__form-wrapper">
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="text"
+                    name="name"
+                    value="{{ user.name ?? '' }}"
+                    placeholder="Your first and last name"
+                    required
+                    minlength="5"
+                    maxlength="56">
+            {% if error.name is defined %}
+                <p class="users__form-error" id="error-name">{{ errors.name ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="text"
+                    name="username"
+                    value="{{ user.username ?? '' }}"
+                    placeholder="Your username"
+                    required
+                    minlength="5"
+                    maxlength="56">
+            {% if error.username is defined %}
+                <p class="users__form-error" id="error-username">{{ errors.username ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="email"
+                    name="email"
+                    value="{{ user.email ?? '' }}"
+                    placeholder="Email"
+                    required
+                    min="10"
+                    maxlength="32"
+                    pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            {% if error.email is defined %}
+                <p class="users__form-error" id="error-email">{{ errors.email ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="text"
+                    name="address"
+                    value="{{ user.address ?? '' }}"
+                    placeholder="Your address"
+                    required
+                    minlength="5"
+                    maxlength="128">
+            {% if error.address is defined %}
+                <p class="users__form-error" id="error-address">{{ errors.address ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="text"
+                    name="phone"
+                    value="{{ user.phone ?? '' }}"
+                    placeholder="Your phone"
+                    required
+                    minlength="5"
+                    maxlength="32">
+            {% if error.phone is defined %}
+                <p class="users__form-error" id="error-phone">{{ errors.phone ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="text"
+                    name="company"
+                    value="{{ user.company ?? '' }}"
+                    placeholder="Your company"
+                    required
+                    minlength="5"
+                    maxlength="64">
+            {% if error.company is defined %}
+                <p class="users__form-error" id="error-company">{{ errors.company ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        {{ user ? (user.id ? "<input type='hidden' name='id' value='" ~ user.id ~ "'>" : '') : '' }}
+        <button class="users__form-btn" type="submit">
+            {{ links.uri == '/users/create' ? 'Add user' : 'Update User' }}
+        </button>
+    </div>
+</form>
