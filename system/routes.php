@@ -18,4 +18,16 @@ return [
         'controller' => 'User',
         'request_method' => 'DELETE'
     ],
+    [
+        'route' => '/^\/users\/create?$/',
+        'method' => 'create',
+        'controller' => 'User',
+        'request_method' => 'GET'
+    ],
+    [
+        'route' => '/^\/users\/create?$/',
+        'method' => 'store',
+        'controller' => 'User',
+        'request_method' => 'POST'
+    ],
 ];

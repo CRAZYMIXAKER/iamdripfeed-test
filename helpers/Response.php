@@ -19,4 +19,14 @@ class Response
             'links' => $navigationLinks
         ];
     }
+
+    /**
+     * @param $route
+     * @return void
+     */
+    public function redirect($route): void
+    {
+        header("Location: $route");
+        return;
+    }
 }

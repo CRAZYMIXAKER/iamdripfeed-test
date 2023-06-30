@@ -51,4 +51,17 @@ class Model
 
         return static::$db->update($data, static::$table);
     }
+
+    /**
+     * @param array $fields
+     * @return int|false
+     */
+    public static function create(array $fields): int|false
+    {
+        $data = self::get();
+        $newId = $data[count($data) - 1]['id'] + 1;
+        $data[] = ['id' => $newId] + $fields;
+
+        return static::$db->update($data, static::$table);
+    }
 }
