@@ -8,6 +8,7 @@ use App\Models\User;
 use Helpers\Pagination;
 use helpers\Request;
 use Helpers\Response;
+use Helpers\Validations\Validator;
 
 class UserController
 {
@@ -25,7 +26,7 @@ class UserController
         $users = UserService::transformUsers($users);
         $pagination = Pagination::run($users, 3);
 
-        if (is_null($pagination)){
+        if (is_null($pagination)) {
             return (new Response())->showError(404);
         }
 
@@ -44,5 +45,36 @@ class UserController
     public function destroy(Request $request): int|false
     {
         return User::delete($request->get('json')->id);
+    }
+
+    public function create(array $user = [], array $errors = []): array
+    {
+        $navigationLinks = Helper::getNavigationLinks();
+
+        return [
+            'path' => 'user/new',
+            'user' => $user,
+            'errors' => $errors,
+            'links' => $navigationLinks
+        ];
+    }
+
+    /**
+     * @param Request $request
+     * @return array|void
+     */
+    public function store(Request $request): array|true
+    {
+        $fields = $request->get('post');
+        $errors = (new Validator())->userValidate($fields);
+
+        if ($errors) {
+            return $this->create($fields, $errors);
+        }
+
+        User::create($fields);
+        (new Response())->redirect('/users');
+
+        return true;
     }
 }

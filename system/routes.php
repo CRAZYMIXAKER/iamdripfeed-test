@@ -25,7 +25,7 @@ return [
         'request_method' => 'GET'
     ],
     [
-        'route' => '/^\/users?$/',
+        'route' => '/^\/users\/create?$/',
         'method' => 'store',
         'controller' => 'User',
         'request_method' => 'POST'
