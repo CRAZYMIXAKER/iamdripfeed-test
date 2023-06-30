@@ -10,6 +10,10 @@ class Validator
     protected static string $phonePattern = '/\A(\+\d{1,2}\s?)?(\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}(\sx\d+)?\z/i';
     protected static string $lettersDashSpacePattern = '/^[a-zA-Z\- ]+$/';
 
+    /**
+     * @param array $fields
+     * @return array
+     */
     public function userValidate(array &$fields): array
     {
         $errors = [];

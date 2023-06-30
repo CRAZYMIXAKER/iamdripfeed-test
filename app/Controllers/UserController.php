@@ -47,6 +47,11 @@ class UserController
         return User::delete($request->get('json')->id);
     }
 
+    /**
+     * @param array $user
+     * @param array $errors
+     * @return array
+     */
     public function create(array $user = [], array $errors = []): array
     {
         $navigationLinks = Helper::getNavigationLinks();
