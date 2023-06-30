@@ -1,0 +1,17 @@
+body {
+    min-width: 320px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1500px;
+}
+
+.wrapper__navigation {
+    margin: 10px 0 0 10px;
+}
+
+.users {
+    display: flex;
+    justify-content: center;
+}

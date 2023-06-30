@@ -1,0 +1,30 @@
+<section class="users">
+    <table class="users__table list">
+        <tr class="list__wrapper list__wrapper--title">
+            {% for key in collection|first|keys %}
+                {% if key != 'id' %}
+                    <th>{{ key }}</th>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        {% for item in collection %}
+            <tr class="list__wrapper">
+                {% for key, value in item %}
+                    {% if key != 'id' %}
+                        <td class="list__item">{{ value }}</td>
+                    {% endif %}
+                {% endfor %}
+                <td class="list__item">
+                    <form
+                            method="post"
+                            action="/users/{{ item.id }}"
+                            data-user-id="{{ item.id }}"
+                            class="list__item-delete">
+                        <input type="hidden" name="id" value="{{ item.id }}">
+                        <button type="submit" class="list__item-delete-btn">Remove button</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</section>
