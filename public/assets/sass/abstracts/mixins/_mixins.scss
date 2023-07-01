@@ -1,0 +1,19 @@
+@use "sass:math";
+
+$html-font-size: 10px;
+
+@function stripUnit($value) {
+    @return math.div($value, ($value * 0 + 1));
+}
+
+@function rem($pxValue) {
+    @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size))}rem;
+}
+
+/* Breakpoints
+--------------------------------------------- */
+@mixin desktop-view {
+    @media only screen and (min-width: $screen__lg) {
+        @content;
+    }
+}
