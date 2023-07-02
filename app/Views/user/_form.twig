@@ -1,11 +1,11 @@
 <form
-        class="users__form"
+        class="users__form form"
         id="{{ links.uri == '/users/create' ? "add-user-form" : "update-user-form" }}"
         action="{{ links.uri == '/users/create' ? '/users/create' : '/users/update' }}"
         method="POST">
     <div class="users__form-wrapper">
+        <p class="form__header">Add user</p>
         <div class="users__form-item">
-            <label>Name</label>
             <input
                     class="users__form-input"
                     type="text"
@@ -22,7 +22,6 @@
         </div>
 
         <div class="users__form-item">
-            <label>Username</label>
             <input
                     class="users__form-input"
                     type="text"
@@ -40,7 +39,6 @@
         </div>
 
         <div class="users__form-item">
-            <label>Email</label>
             <input
                     class="users__form-input"
                     type="email"
@@ -57,7 +55,6 @@
         </div>
 
         <div class="users__form-item">
-            <label>Street</label>
             <input
                     class="users__form-input"
                     type="text"
@@ -75,7 +72,6 @@
         </div>
 
         <div class="users__form-item">
-            <label>City</label>
             <input
                     class="users__form-input"
                     type="text"
@@ -93,7 +89,6 @@
         </div>
 
         <div class="users__form-item">
-            <label>Zipcode</label>
             <input
                     class="users__form-input"
                     type="text"
@@ -111,7 +106,6 @@
         </div>
 
         <div class="users__form-item">
-            <label>Phone</label>
             <input
                     class="users__form-input"
                     type="tel"
@@ -129,7 +123,6 @@
         </div>
 
         <div class="users__form-item">
-            <label>Company name</label>
             <input
                     class="users__form-input"
                     type="text"
@@ -146,8 +139,9 @@
             {% endif %}
         </div>
 
-        <button class="users__form-btn" type="submit">
-            {{ links.uri == '/users/create' ? 'Add user' : 'Update User' }}
-        </button>
+        <input
+                class="users__form-btn"
+                type="submit"
+                value="{{ links.uri == '/users/create' ? 'Add user' : 'Update User' }}">
     </div>
 </form>

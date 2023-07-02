@@ -1,6 +1,4 @@
 {% extends 'layout/main.twig' %}
 {% block content %}
-    <h1>Add user</h1>
-    <br>
     {% include 'user/_form.twig' with {links, user, errors} %}
 {% endblock %}
