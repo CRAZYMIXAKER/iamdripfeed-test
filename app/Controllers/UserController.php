@@ -6,7 +6,7 @@ use App\Services\UserService;
 use Helpers\Helper;
 use App\Models\User;
 use Helpers\Pagination;
-use helpers\Request;
+use Helpers\Request;
 use Helpers\Response;
 use Helpers\Validations\Validator;
 
