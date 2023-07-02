@@ -23,6 +23,14 @@ class UserController
         ], 'phone', 'company' => ['name']
         ]);
 
+        if (is_null($users)) {
+            return [
+                'path' => 'user/index',
+                'users' => $users,
+                'links' => $navigationLinks
+            ];
+        }
+
         $users = UserService::transformUsers($users);
         $pagination = Pagination::run($users, 3);
 

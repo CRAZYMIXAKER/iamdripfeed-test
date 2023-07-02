@@ -45,9 +45,9 @@ class JsonDb implements FileDatabaseInterface
 
     /**
      * @param string $fileName
-     * @return array|false
+     * @return array|false|null
      */
-    public function read(string $fileName): array|false
+    public function read(string $fileName): array|false|null
     {
         $file = self::FILE_PATH . $fileName . '.json';
 
