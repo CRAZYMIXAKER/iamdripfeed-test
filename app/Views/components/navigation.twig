@@ -1,5 +1,21 @@
-<div class="wrapper__navigation">
-    {{ links.uri != '/' ? "<a href='/' style='margin-right: 15px;'>Main page</a>" : '' }}
-    {{ links.users ? '' : "<a href='/users' style='margin-right: 15px;'> Users </a>" }}
-    {{ links.uri != '/users/create' ? "<a href='/users/create' style='margin-right: 15px;'> Add User </a>" }}
-</div>
+<nav class="wrapper__navigation">
+    <ul class="navigation">
+        {% if links.uri != '/' %}
+            <li class="navigation__item">
+                <a class="navigation__item-link" href="/">Main page</a>
+            </li>
+        {% endif %}
+
+        {% if not links.users %}
+            <li class="navigation__item">
+                <a class="navigation__item-link" href="/users">Users</a>
+            </li>
+        {% endif %}
+
+        {% if links.uri != '/users/create' %}
+            <li class="navigation__item">
+                <a class="navigation__item-link" href="/users/create">Add User</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
