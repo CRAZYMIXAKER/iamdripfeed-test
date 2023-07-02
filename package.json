@@ -1,0 +1,24 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass --style=expanded -w public/assets/sass/:./public/assets/css/ --no-source-map",
+    "compile:css": "sass public/assets/sass/:./public/assets/css/ --no-source-map --style=compressed ",
+    "compile:scss": "sass public/assets/sass/:./public/assets/css/ --no-source-map --style=compressed && run-p scss:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CRAZYMIXAKER/iamdripfeed-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CRAZYMIXAKER/iamdripfeed-test/issues"
+  },
+  "homepage": "https://github.com/CRAZYMIXAKER/iamdripfeed-test#readme",
+  "dependencies": {
+    "sass": "^1.63.6"
+  }
+}

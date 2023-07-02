@@ -2,11 +2,11 @@ $(document).ready(function () {
     $(function () {
 
         // delete user
-        $('.users__table .list__item-delete').submit(function (event) {
+        $('.users__table .users__item-delete').submit(function (event) {
             event.preventDefault();
 
             let form = $(this);
-            let message = "Are you sure you want to remove this item?";
+            let message = "Are you sure you want to remove user?";
             let id = form.find('input[name="id"]').val();
 
             if (confirm(message)) {
@@ -16,7 +16,7 @@ $(document).ready(function () {
                     data: JSON.stringify({id: id}),
                     contentType: 'application/json',
                     success: function (data) {
-                        alert('Пользователь успешно удален!');
+                        alert('User has been successfully deleted!');
                         window.location.replace("/users");
                     },
                     error: function (xhr, status, error) {
