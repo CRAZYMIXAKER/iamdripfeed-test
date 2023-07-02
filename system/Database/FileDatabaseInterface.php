@@ -13,9 +13,9 @@ interface FileDatabaseInterface
      * Read database file
      *
      * @param string $fileName
-     * @return array|false
+     * @return array|false|null
      */
-    public function read(string $fileName): array|false;
+    public function read(string $fileName): array|false|null;
 
     /**
      * Update(rewrite) database file
