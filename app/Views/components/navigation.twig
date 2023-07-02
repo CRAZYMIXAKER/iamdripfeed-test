@@ -1,0 +1,21 @@
+<nav class="wrapper__navigation">
+    <ul class="navigation">
+        {% if links.uri != '/' %}
+            <li class="navigation__item">
+                <a class="navigation__item-link" href="/">Main page</a>
+            </li>
+        {% endif %}
+
+        {% if not links.users %}
+            <li class="navigation__item">
+                <a class="navigation__item-link" href="/users">Users</a>
+            </li>
+        {% endif %}
+
+        {% if links.uri != '/users/create' %}
+            <li class="navigation__item">
+                <a class="navigation__item-link" href="/users/create">Add User</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>

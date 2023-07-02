@@ -1,0 +1,35 @@
+.users {
+    display: flex;
+    justify-content: center;
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+
+        &-wrapper {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            max-width: 320px;
+            row-gap: 12px;
+        }
+
+        &-item {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+        }
+
+        &-input {
+            width: 100%;
+        }
+
+        &-error {
+            color: red;
+            margin: unset;
+            word-break: break-all;
+        }
+    }
+}

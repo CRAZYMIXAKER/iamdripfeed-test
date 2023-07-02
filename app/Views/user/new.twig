@@ -1,0 +1,4 @@
+{% extends 'layout/main.twig' %}
+{% block content %}
+    {% include 'user/_form.twig' with {links, user, errors} %}
+{% endblock %}

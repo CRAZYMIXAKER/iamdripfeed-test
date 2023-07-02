@@ -1,0 +1,43 @@
+<div class="users__table table">
+    <div class="table__header">
+        <table class="table__wrapper">
+            <thead>
+            <tr class="table__row">
+                {% for key in collection|first|keys %}
+                    {% if key != 'id' %}
+                        <th class="table__row-item table__row-item--th">{{ key }}</th>
+                    {% endif %}
+                {% endfor %}
+                <th></th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table__content">
+        <table class="table__wrapper">
+            <tbody>
+            {% for item in collection %}
+                <tr class="table__row">
+                    {% for key, value in item %}
+                        {% if key != 'id' %}
+                            <td class="table__row-item table__row-item--td">{{ value }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    <td class="table__row-item table__row-item--td">
+                        <form
+                                method="post"
+                                action="/users/{{ item.id }}"
+                                data-user-id="{{ item.id }}"
+                                class="users__item-delete">
+                            <input type="hidden" name="id" value="{{ item.id }}">
+                            <button type="submit" class="users__item-delete-btn form__btn-delete">
+                                <span>Remove button</span>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+<form
+        class="users__form form"
+        id="{{ links.uri == '/users/create' ? "add-user-form" : "update-user-form" }}"
+        action="{{ links.uri == '/users/create' ? '/users/create' : '/users/update' }}"
+        method="POST">
+    <div class="users__form-wrapper">
+        <p class="form__header">Add user</p>
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="text"
+                    name="name"
+                    value="{{ user.name ?? '' }}"
+                    placeholder="Your first and last name"
+                    required
+                    minlength="5"
+                    maxlength="56"
+                    pattern="^[A-Za-z ]+$">
+            {% if errors.name is defined %}
+                <p class="users__form-error" id="error-name">{{ errors.name ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="text"
+                    name="username"
+                    value="{{ user.username ?? '' }}"
+                    placeholder="Your username"
+                    required
+                    minlength="5"
+                    maxlength="56"
+                    title="Username can only contain letters, spaces, '-', '.', '_'"
+                    pattern="^[A-Za-z\-._\s]+$">
+            {% if errors.username is defined %}
+                <p class="users__form-error" id="error-username">{{ errors.username ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="email"
+                    name="email"
+                    value="{{ user.email ?? '' }}"
+                    placeholder="Email"
+                    required
+                    minlength="10"
+                    maxlength="32"
+                    pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            {% if errors.email is defined %}
+                <p class="users__form-error" id="error-email">{{ errors.email ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="text"
+                    name="address[street]"
+                    value="{{ user.address.street ?? '' }}"
+                    placeholder="Your street"
+                    required
+                    minlength="5"
+                    maxlength="32"
+                    title="Street can only contain letters, spaces and dashes"
+                    pattern="^[a-zA-Z\- ]+$">
+            {% if errors.address.street is defined %}
+                <p class="users__form-error" id="error-address-street">{{ errors.address.street ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="text"
+                    name="address[city]"
+                    value="{{ user.address.city ?? '' }}"
+                    placeholder="Your city"
+                    required
+                    minlength="5"
+                    maxlength="32"
+                    title="City can only contain letters, spaces and dashes"
+                    pattern="^[a-zA-Z\- ]+$">
+            {% if errors.address.city is defined %}
+                <p class="users__form-error" id="error-address-city">{{ errors.address.city ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="text"
+                    name="address[zipcode]"
+                    value="{{ user.address.zipcode ?? '' }}"
+                    placeholder="Your zipcode"
+                    required
+                    minlength="5"
+                    maxlength="16"
+                    title="Zipcode can only contain numbers and dashes"
+                    pattern="^\d{5}(?:[-\s]\d{4})?$">
+            {% if errors.address.zipcode is defined %}
+                <p class="users__form-error" id="error-address-zipcode">{{ errors.address.zipcode ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="tel"
+                    name="phone"
+                    value="{{ user.phone ?? '' }}"
+                    placeholder="Your phone"
+                    required
+                    minlength="5"
+                    maxlength="32"
+                    title="Phone can only contain numbers, dashes, dots, spaces, 'x', brackets, and plus"
+                    pattern="/\A(\+\d{1,2}\s?)?(\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}(\sx\d+)?\z/i">
+            {% if errors.phone is defined %}
+                <p class="users__form-error" id="error-phone">{{ errors.phone ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <div class="users__form-item">
+            <input
+                    class="users__form-input"
+                    type="text"
+                    name="company[name]"
+                    value="{{ user.company.name ?? '' }}"
+                    placeholder="Your company"
+                    required
+                    minlength="5"
+                    maxlength="64"
+                    title="Company name can only contain letters, spaces and dashes"
+                    pattern="^[a-zA-Z\- ]+$">
+            {% if errors.company.name is defined %}
+                <p class="users__form-error" id="error-company-name">{{ errors.company.name ?? '' }}</p>
+            {% endif %}
+        </div>
+
+        <input
+                class="users__form-btn"
+                type="submit"
+                value="{{ links.uri == '/users/create' ? 'Add user' : 'Update User' }}">
+    </div>
+</form>

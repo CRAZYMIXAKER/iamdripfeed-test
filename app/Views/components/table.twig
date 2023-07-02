@@ -1,0 +1,26 @@
+<div class="table">
+    <div class="table__header">
+        <table class="table__wrapper">
+            <thead>
+            <tr>
+                {% for key in collection|first|keys %}
+                    <th>{{ key }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table__content">
+        <table class="table__wrapper">
+            <tbody>
+            {% for item in collection %}
+                <tr>
+                    {% for value in item %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

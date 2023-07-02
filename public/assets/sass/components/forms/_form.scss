@@ -1,0 +1,191 @@
+@import "../../abstracts/_abstracts.scss";
+
+$LOC_CLR_WHITE: rgba(255, 255, 255, 0.3);
+
+form {
+    .form__btn-delete {
+        align-items: center;
+        background: unset;
+        border: unset;
+        display: flex;
+        font-size: unset;
+        justify-content: center;
+        left: 0;
+        margin: 0;
+        position: relative;
+        top: 0;
+        width: auto;
+
+        &:hover span {
+            letter-spacing: 3px;
+        }
+
+        &:hover span::before {
+            transform: skewX(45deg) translate(200px);
+        }
+
+        &::before {
+            background: $CLR_RED;
+            border-radius: 10px;
+            bottom: -5px;
+            content: "";
+            height: 10px;
+            left: 50%;
+            position: absolute;
+            transform: translatex(-50%);
+            transition-delay: .5s;
+            transition: 0.5s;
+            width: 30px;
+        }
+
+        &:hover::before {
+            border-radius: 30px;
+            bottom: 0;
+            height: 50%;
+            width: 80%;
+        }
+
+        &::after {
+            background: $CLR_RED;
+            border-radius: 10px;
+            content: "";
+            height: 10px;
+            left: 50%;
+            position: absolute;
+            top: -5px;
+            transform: translatex(-50%);
+            transition-delay: .5s;
+            transition: 0.5s;
+            width: 30px;
+        }
+
+        &:hover::after {
+            border-radius: 30px;
+            height: 50%;
+            top: 0;
+            width: 80%;
+        }
+
+        &::before,
+        &::after {
+            background: $CLR_PINK;
+            box-shadow: 0 0 5px $CLR_PINK, 0 0 15px $CLR_PINK, 0 0 30px $CLR_PINK, 0 0 60px $CLR_PINK;
+        }
+
+        span {
+            align-items: center;
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+            color: $CLR_GRY_FFF;
+            display: flex;
+            font-weight: 400;
+            height: 100%;
+            justify-content: center;
+            letter-spacing: 1px;
+            overflow: hidden;
+            padding: 10px;
+            text-decoration: none;
+            transition: 0.5s;
+            width: 100%;
+            z-index: 1;
+
+            &::before {
+                background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+                content: "";
+                filter: blur(0px);
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                transform: skewX(45deg) translate(0);
+                transition: 0.5s;
+                width: 50%;
+            }
+        }
+    }
+}
+
+.form {
+    backdrop-filter: blur(10px);
+    background: $LOC_CLR_WHITE;
+    border-left: 1px solid $LOC_CLR_WHITE;
+    border-radius: 20px;
+    border-top: 1px solid $LOC_CLR_WHITE;
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+    padding: 24px;
+    position: relative;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    width: fit-content;
+
+    &__header {
+        color: $CLR_GRY_FFF;
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin: 0 0 16px 0;
+        opacity: 0.7;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    input {
+        backdrop-filter: blur(5px);
+        background: transparent;
+        border: none;
+        border-left: 1px solid $LOC_CLR_WHITE;
+        border-radius: 5000px;
+        border-top: 1px solid $LOC_CLR_WHITE;
+        box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+        color: $CLR_GRY_FFF;
+        font-family: Montserrat, sans-serif;
+        font-weight: 500;
+        padding: 1em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s ease-in-out;
+        width: 200px;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        &[type="email"],
+        &[type="password"] {
+
+            &:focus {
+                background: rgba(255, 255, 255, 0.1);
+                box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        &[type="button"] {
+            font-size: 1rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:active {
+                background: rgba(255, 255, 255, 0.2);
+            }
+        }
+    }
+}
+
+::placeholder {
+    color: $CLR_GRY_FFF;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+a,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}

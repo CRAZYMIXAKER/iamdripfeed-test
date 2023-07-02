@@ -1,0 +1,9 @@
+@use "sass:math";
+
+/* Breakpoints
+--------------------------------------------- */
+@mixin desktop-view {
+    @media only screen and (min-width: $screen__lg) {
+        @content;
+    }
+}

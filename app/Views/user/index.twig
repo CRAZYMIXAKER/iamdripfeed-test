@@ -1,0 +1,15 @@
+{% extends 'layout/main.twig' %}
+{% block content %}
+    <h1 class="wrapper__title">Users</h1>
+    <section class="users">
+        {% if users %}
+            {% include "user/_table.twig" with { collection: users } %}
+
+            {% if (pageArray['count_page'] > 1) %}
+                {% include 'components/pagination.twig' with {pageArray} %}
+            {% endif %}
+        {% else %}
+            <p class="notification notification--info">Sorry, no users found</p>
+        {% endif %}
+    </section>
+{% endblock %}

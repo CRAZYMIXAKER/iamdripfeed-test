@@ -2,7 +2,11 @@
     "name": "root/html",
     "autoload": {
         "psr-4": {
-            "Root\\Html\\": "src/"
+            "App\\Models\\": "app/Models/",
+            "App\\Controllers\\": "app/Controllers/",
+            "App\\Services\\": "app/Services/",
+            "System\\": "system/",
+            "Helpers\\": "helpers/"
         }
     },
     "authors": [
@@ -12,6 +16,10 @@
     ],
     "require": {
         "php": "^8.2",
-        "ext-xdebug": "*"
+        "twig/twig": "^2.0"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
     }
 }
