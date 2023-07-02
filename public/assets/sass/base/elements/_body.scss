@@ -1,3 +1,7 @@
+@import "../../abstracts/_abstracts.scss";
+
 body {
+    background: -webkit-linear-gradient(left, $CLR_GRN1, $CLR_BLUE);
+    background: linear-gradient(to right, $CLR_GRN1, $CLR_BLUE);
     min-width: 320px;
 }

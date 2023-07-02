@@ -1,9 +1,11 @@
+@import "../abstracts/_abstracts.scss";
+
 .wrapper {
     margin: 0 auto;
     max-width: 1500px;
 
     &__title {
-        color: #fff;
+        color: $CLR_GRY_FFF;
         font-size: 30px;
         font-weight: 300;
         margin-bottom: 15px;

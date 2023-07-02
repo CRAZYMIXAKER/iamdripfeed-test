@@ -1,3 +1,5 @@
+@import "../../abstracts/_abstracts.scss";
+
 .notification {
     align-items: center;
     border-radius: 8px;
@@ -8,7 +10,7 @@
 
     &--accept {
         background-color: rgba(7, 149, 66, 0.12);
-        color: #31f12d;
+        color: $CLR_GRN;
     }
 
     &--info {

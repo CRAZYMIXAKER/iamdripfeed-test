@@ -1,3 +1,5 @@
+@import "../../abstracts/_abstracts.scss";
+
 .pagination {
     align-items: center;
     column-gap: 16px;
@@ -31,7 +33,7 @@
         &:before,
         &:after {
             border-radius: 50%;
-            border: 3px solid #ecf0f1;
+            border: 3px solid $CLR_GRY1;
             content: '';
             display: block;
             height: 100%;
@@ -42,7 +44,7 @@
         }
 
         &:before {
-            background: #ecf0f1;
+            background: $CLR_GRY1;
             transform: scale(.2);
         }
 

@@ -1,4 +1,6 @@
-$LOC_WHITE: rgba(255, 255, 255, 0.3);
+@import "../../abstracts/_abstracts.scss";
+
+$LOC_CLR_WHITE: rgba(255, 255, 255, 0.3);
 
 form {
     .form__btn-delete {
@@ -23,7 +25,7 @@ form {
         }
 
         &::before {
-            background: #f00;
+            background: $CLR_RED;
             border-radius: 10px;
             bottom: -5px;
             content: "";
@@ -44,7 +46,7 @@ form {
         }
 
         &::after {
-            background: #f00;
+            background: $CLR_RED;
             border-radius: 10px;
             content: "";
             height: 10px;
@@ -66,8 +68,8 @@ form {
 
         &::before,
         &::after {
-            background: #ff1f71;
-            box-shadow: 0 0 5px #ff1f71, 0 0 15px #ff1f71, 0 0 30px #ff1f71, 0 0 60px #ff1f71;
+            background: $CLR_PINK;
+            box-shadow: 0 0 5px $CLR_PINK, 0 0 15px $CLR_PINK, 0 0 30px $CLR_PINK, 0 0 60px $CLR_PINK;
         }
 
         span {
@@ -78,7 +80,7 @@ form {
             border-radius: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
-            color: #fff;
+            color: $CLR_GRY_FFF;
             display: flex;
             font-weight: 400;
             height: 100%;
@@ -109,10 +111,10 @@ form {
 
 .form {
     backdrop-filter: blur(10px);
-    background: $LOC_WHITE;
-    border-left: 1px solid $LOC_WHITE;
+    background: $LOC_CLR_WHITE;
+    border-left: 1px solid $LOC_CLR_WHITE;
     border-radius: 20px;
-    border-top: 1px solid $LOC_WHITE;
+    border-top: 1px solid $LOC_CLR_WHITE;
     box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
     padding: 24px;
     position: relative;
@@ -121,7 +123,7 @@ form {
     width: fit-content;
 
     &__header {
-        color: #fff;
+        color: $CLR_GRY_FFF;
         font-size: 1.4rem;
         font-weight: 500;
         margin: 0 0 16px 0;
@@ -133,11 +135,11 @@ form {
         backdrop-filter: blur(5px);
         background: transparent;
         border: none;
-        border-left: 1px solid $LOC_WHITE;
+        border-left: 1px solid $LOC_CLR_WHITE;
         border-radius: 5000px;
-        border-top: 1px solid $LOC_WHITE;
+        border-top: 1px solid $LOC_CLR_WHITE;
         box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
-        color: #fff;
+        color: $CLR_GRY_FFF;
         font-family: Montserrat, sans-serif;
         font-weight: 500;
         padding: 1em;
@@ -174,7 +176,7 @@ form {
 }
 
 ::placeholder {
-    color: #fff;
+    color: $CLR_GRY_FFF;
     font-family: Montserrat, sans-serif;
     font-weight: 400;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
